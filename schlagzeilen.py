@@ -46,7 +46,8 @@ class Simple(resource.Resource):
 		
 		
 		
-		<a href="javascript:this.location.reload();">refresh</a>
+		<a href="javascript:this.location.reload();">refresh</a> - 
+		<a href="http://github.com/janboe/schlagzeilen/blob/master/schlagzeilen.py"> source</a>
 		</center>
 </body>
 </html>
