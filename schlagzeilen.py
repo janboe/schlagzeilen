@@ -36,7 +36,8 @@ class Simple(resource.Resource):
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+<meta http-equiv="Content-Style-Type" content="text/css">
 <title>BILD informiert</title>
 </head>
 <body>
@@ -47,7 +48,11 @@ class Simple(resource.Resource):
 		
 		
 		<a href="javascript:this.location.reload();">refresh</a> - 
-		<a href="http://github.com/janboe/schlagzeilen/blob/master/schlagzeilen.py"> source</a>
+		<a href="http://github.com/janboe/schlagzeilen/blob/master/schlagzeilen.py">source</a>
+		<p><a href="http://www.validome.org/referer">
+			<img style="border:none"
+				 src="http://www.validome.org/images/set5/valid_html_4_0_1.gif"
+				 alt="Valid HTML 4.01" width="80" height="15"></a></p>
 		</center>
 </body>
 </html>
