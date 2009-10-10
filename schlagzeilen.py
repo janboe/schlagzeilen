@@ -16,7 +16,7 @@ class bild(object):
 		self.nomen = ["Frau", "Papst", "Bibel", "Kanzler", "Obama", "Party", "Poldi", "Hitler",
 				"Sex", "Moslem", "Bauer", "Erfinder", "Minister", "Superstar", "Deutschland", 
 				"Verona", "Bohlen", "Merkel", "Wurst", "Priester", "Ausland", "Europa", "Döner", "Klinsi",
-				"Killer", "Verbrecher", "Nazi", "Chaot", "Guru"]
+				"Killer", "Verbrecher", "Nazi", "Chaot", "Guru", "Ausländer", "Politiker"]
 		self.verben = ["schlägt", "rettet", "kauft", "klaut", "isst", "verlässt", "will", "hasst",
 				"predigt", "befreit", "erschießt", "erfindet", "heiratet", "verbrennt", "kauft",
 				"verbietet", "verkauft", "findet", "zerstört", "verkündet", "verspricht"]
@@ -31,8 +31,10 @@ class bild(object):
 			t.append(self.nomen[rand(0,len(self.nomen) - 1)] + " ")
 			t.append(self.verben[rand(0,len(self.verben) - 1)] + " ")
 			t.append(self.nomen_ende[rand(0,len(self.nomen_ende) - 1)])
-			if t[2] is not t[4]:
+			if t[4] not in t[2] and t[2] not in t[1]:
 				break
+			else:
+				t = []
 		return t[0] + t[1] + t[2] + t[3] + t[4]
 		
 	def max(self):
