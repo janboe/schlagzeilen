@@ -39,7 +39,7 @@ if __name__ == '__main__':
 	    def __init__(self):
 			resource.Resource.__init__(self)
 			self.bild = bild()
-			self.header = """
+			self.html = """
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -51,26 +51,27 @@ if __name__ == '__main__':
 <body>
 <center>
 <h1> Aktuell: </h1>
-			"""
-			self.footer = """		
+		{0}	
 		<br>
 		<br> 
 		<a href="javascript:this.location.reload();">refresh</a> - 
 		<a href="http://github.com/janboe/schlagzeilen/blob/master/schlagzeilen.py">source</a>
-		<p><a href="http://www.validome.org/referer">
+		<p>	<a href="http://www.validome.org/referer">
 			<img style="border:none"
 				 src="http://www.validome.org/images/set5/valid_html_4_0_1.gif"
-				 alt="Valid HTML 4.01" width="80" height="15"></a></p>
+				 alt="Valid HTML 4.01" width="80" height="15">
+			</a>
+		</p>
 		<br>
-		  <span style="font-size:60%"><i> Mögliche Schlagzeilen: 				 
-			""" + str(self.bild.max()) + """
-		</i></span><br>
+		<span style="font-size:60%"><i> Mögliche Schlagzeilen: {1}</i>
+		</span>
+		<br>
 		</center>
 </body>
 </html>
-			"""
+			""".format("{0}", str(self.bild.max()))
 	    def render_GET(self, request):
-	        return self.header + self.bild.gib()  + self.footer
+	        return self.html.format(self.bild.gib())
 
 if __name__ == '__main__':
 	site = server.Site(Simple())
