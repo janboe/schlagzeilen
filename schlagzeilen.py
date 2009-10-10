@@ -12,7 +12,7 @@ class bild(object):
 						"Schock", "Grauenvoll", "Schon wieder"]
 		self.pre = ["Ex", "Ober", "Hitler", "Ausländer", "Jugend", "Kirchen", "Bayern",
 				"Fußball", "Islamisten", "Amerika", "Meister", "Politiker", "Horror", "Panik", "Todes",
-				"Hass", "UFO", "Monster", "Katholiken", "Knast", "Zuknunfts", "China", "Nazi"]
+				"Hass", "UFO", "Monster", "Katholiken", "Knast", "Zukunfts", "China", "Nazi"]
 		self.nomen = ["Frau", "Papst", "Bibel", "Kanzler", "Obama", "Party", "Poldi", "Hitler",
 				"Sex", "Moslem", "Bauer", "Erfinder", "Minister", "Superstar", "Deutschland", 
 				"Verona", "Bohlen", "Merkel", "Wurst", "Priester", "Ausland", "Europa", "Döner", "Klinsi",
