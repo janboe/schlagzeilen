@@ -26,19 +26,19 @@ class bild(object):
 	def gib(self):
 		t = []
 		while True:
-			t.append("<b>" + self.inter[rand(0,len(self.inter) - 1)] + ":</b> ")
-			t.append(self.pre[rand(0,len(self.pre) - 1)] + "-")
-			t.append(self.nomen[rand(0,len(self.nomen) - 1)] + " ")
-			t.append(self.verben[rand(0,len(self.verben) - 1)] + " ")
+			t.append(self.inter[rand(0,len(self.inter) - 1)])
+			t.append(self.pre[rand(0,len(self.pre) - 1)])
+			t.append(self.nomen[rand(0,len(self.nomen) - 1)])
+			t.append(self.verben[rand(0,len(self.verben) - 1)])
 			t.append(self.nomen_ende[rand(0,len(self.nomen_ende) - 1)])
 			if t[4] not in t[2] and t[2] not in t[1]:
 				break
 			else:
 				t = []
-		return t[0] + t[1] + t[2] + t[3] + t[4]
+		return "<b>{0[0]}:</b> {0[1]}-{0[2]} {0[3]} {0[4]}".format(t)
 		
 	def max(self):
-		return len(self.pre) * len(self.inter) * len(self.nomen) * len(self.verben) * len(self.nomen_ende)
+		return (len(self.pre) - 1) * (len(self.inter) - 1) * len(self.nomen) * len(self.verben) * len(self.nomen_ende)
 
 if __name__ == '__main__':	
 	class Simple(resource.Resource):
