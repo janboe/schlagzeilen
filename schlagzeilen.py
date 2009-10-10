@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # *--coding: utf-8 --*
 from random import randint as rand
-from twisted.web import server, resource
-from twisted.internet import reactor
+if __name__ == '__main__':
+	from twisted.web import server, resource
+	from twisted.internet import reactor
 
 
 class bild(object):
@@ -31,13 +32,14 @@ class bild(object):
 		
 	def max(self):
 		return len(self.pre) * len(self.inter) * len(self.nomen) * len(self.verben) * len(self.nomen_ende)
-		
-class Simple(resource.Resource):
-    isLeaf = True
-    def __init__(self):
-		resource.Resource.__init__(self)
-		self.bild = bild()
-		self.header = """
+
+if __name__ == '__main__':	
+	class Simple(resource.Resource):
+	    isLeaf = True
+	    def __init__(self):
+			resource.Resource.__init__(self)
+			self.bild = bild()
+			self.header = """
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -49,8 +51,8 @@ class Simple(resource.Resource):
 <body>
 <center>
 <h1> Aktuell: </h1>
-		"""
-		self.footer = """		
+			"""
+			self.footer = """		
 		<br>
 		<br> 
 		<a href="javascript:this.location.reload();">refresh</a> - 
@@ -61,14 +63,14 @@ class Simple(resource.Resource):
 				 alt="Valid HTML 4.01" width="80" height="15"></a></p>
 		<br>
 		  <span style="font-size:60%"><i> Mögliche Schlagzeilen: 				 
-		""" + str(self.bild.max()) + """
+			""" + str(self.bild.max()) + """
 		</i></span><br>
 		</center>
 </body>
 </html>
-		"""
-    def render_GET(self, request):
-        return self.header + self.bild.gib()  + self.footer
+			"""
+	    def render_GET(self, request):
+	        return self.header + self.bild.gib()  + self.footer
 
 if __name__ == '__main__':
 	site = server.Site(Simple())
